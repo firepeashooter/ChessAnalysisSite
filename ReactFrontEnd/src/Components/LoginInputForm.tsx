@@ -15,8 +15,16 @@ function LoginInputForm(){
 
     function handleOnSubmit() {
         //Send info to the backend
+
+        //fetch(from this url(backend url) with the following information:)
         console.log(username)
         console.log(password)
+
+
+        //if we get an ok code redirect to the new login page
+
+
+        //if not show an error page
 
     }
 
