@@ -55,6 +55,11 @@ function InputForm(){ //Handles the entire input form
 
     //Logs all of our variables that are going to be sored in the record (to be sent to a django database)
     function handleOnSubmit(){
+
+
+        //Send/Post all of this information to the backend 
+
+
         console.log('BUFFER LINE FOR THE CONSOLE') //DELETE THIS LATER
         console.log('Accuracy: ' + accuracy)
         console.log('Opening: ' + opening)

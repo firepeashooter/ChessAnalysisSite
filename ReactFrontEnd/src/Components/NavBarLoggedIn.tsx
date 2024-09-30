@@ -19,8 +19,14 @@ const Navbar = () => {
                 <ul className="nav-links">
 
                     <li> 
+                        <a href="/input">
+                        Input Games
+                        </a>
+                    </li>
+
+                    <li> 
                         <a href="/login">
-                        Login
+                        (Username)
                         </a>
                     </li>
                     

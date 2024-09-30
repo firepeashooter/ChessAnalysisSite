@@ -42,9 +42,11 @@ INSTALLED_APPS = [
     "rest_framework_simplejwt",
     "accounts",
     "chess_game",
+    "corsheaders"
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -102,6 +104,13 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
+]
+
+#CORS setup it allows the front end to run on a different url then the backend
+
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1:8000",  
+    "http://localhost:8000",  
 ]
 
 

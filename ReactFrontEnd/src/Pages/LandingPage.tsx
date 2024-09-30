@@ -3,7 +3,7 @@ import Title from '../Components/Title';
 import LoginButton from '../Components/LoginButton';
 
 
-function HomePage(){
+function LandingPage(){
     return(
         
         <div>
@@ -15,4 +15,4 @@ function HomePage(){
     )
 }
 
-export default HomePage
+export default LandingPage
