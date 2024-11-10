@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { Navigate, useNavigate } from 'react-router-dom';
 
 
 
@@ -10,14 +11,19 @@ import React, {useState} from "react";
 
 function LoginInputForm(){
 
-    var username = ""
-    var password = ""
+    var username = "";
+    var password = "";
+    const navigate = useNavigate();
 
 
 
     async function handleLogin(username: string, password:string) {
 
-        const url = "http://localhost:8000/login" //This is the url for our backend and the specific page we want to post to
+        console.log('')
+
+        console.log("Attempting to Login....")
+
+        const url = "http://127.0.0.1:8000/login" //This is the url for our backend and the specific page we want to post to
 
         //creates a JSON of the credentials to send to the backend
         const credentials = {
@@ -39,7 +45,21 @@ function LoginInputForm(){
 
             //This is what happens when it correctly posts
             const json = await response.json();
-            console.log('Login Success', json)
+            console.log('Login Success', json);
+
+            //Store the Access and Refresh tokens in localStorage so we can use them to authenticate the user
+            const {access, refresh} = json;
+
+            if (access && refresh){
+                localStorage.setItem("access_token", access);
+                localStorage.setItem("refresh_token", refresh);
+                console.log("tokens saved");
+
+                //Put the user on the logged in home page
+            navigate('/home')
+            }else{
+                throw new Error("Tokens not found in response");
+            }
 
         } catch (error){ //This handles any errors that come up
             if (error instanceof Error) {
@@ -55,13 +75,18 @@ function LoginInputForm(){
 
     }
 
-    function handleOnSubmit() {
-        console.log('')
+    function handleOnSubmit(event: React.FormEvent<HTMLFormElement>) {
+
+        event.preventDefault(); //This stops the form from refreshing so that it can send info to the backend
+
         console.log(username)
         console.log(password)
 
         //Send info to the backend
         handleLogin(username, password)
+
+        
+
 
     }
 

@@ -2,7 +2,7 @@ from rest_framework import serializers
 from .models import User
 
 
-class UserSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.ModelSerializer): #Converts python data structures so it can be easily converted to JSON
     class Meta:
         model = User
         fields = ["email", "password", "username"]

@@ -1,15 +1,15 @@
 import React from "react";
 import Title from '../Components/Title';
-import Navbar from '../Components/NavBar';
+import NavbarLoggedIn from "../Components/NavBarLoggedIn";
 
 
-function LandingPage(){
+function HomePage(){
     return(
         
         <div>
 
-            <Navbar/>
-            
+            <NavbarLoggedIn/>
+
             <Title/>
             
             
@@ -18,4 +18,4 @@ function LandingPage(){
     )
 }
 
-export default LandingPage
+export default HomePage
