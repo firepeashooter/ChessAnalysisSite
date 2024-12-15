@@ -3,6 +3,7 @@ import '../CSS/navbar.css'
 import { Navigate, useNavigate } from "react-router-dom";
 
 
+
 async function handleLogOut() {
 
     console.log('')
@@ -106,16 +107,29 @@ const NavbarLoggedIn = () => {
                         Logout
                         </button>
                     </li>
+
+                   
                     
                     
-
-
-
                 </ul>
                 
+                
+
+                <div className="sub-menu-wrap">
+                    <div className="sub-menu"> 
+                        <div className="user-info">
+                            <h2>Username</h2>
+
+                        </div>
+                    
+                    </div>
+
+
+            
+                </div>
+
 
             </div>
-
 
         </nav>
 

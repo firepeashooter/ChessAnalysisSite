@@ -4,7 +4,8 @@
     align-items: center;
     background-color: #333;
     color: #fff;
-    padding: 1rem;
+    padding: 10px;
+    
   }
 
 
@@ -20,21 +21,42 @@
 .navbar-right {
     display: flex;
     align-items: center;
-    color:#fff;
+  color:#fff;
   }
 
-  .navbar-right .nav-links {
-    list-style-type: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-  }
+.navbar-right .nav-links {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
   
-  .navbar-right .nav-links li {
-    margin-right: 1rem;
-  }
+.navbar-right .nav-links li {
+  margin-right: 1rem;
+}
   
-  .navbar-right .nav-links a {
-    color: #fff;
-    text-decoration: none;
+.navbar-right .nav-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+  
+.sub-menu-wrap{
+    position: absolute;
+    top: 100%;
+    right: 10%;
+    width: 10px;
+  
+  }
+
+  .sub-menu{
+    background: #333;
+    padding: 20px;
+    margin: 10px;
+
+  }
+
+  .user-info{
+    display:flex;
+    align-items: center;
   }

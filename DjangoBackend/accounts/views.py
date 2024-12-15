@@ -90,7 +90,6 @@ class ValidateToken(APIView):
         )
 
 
-
 class RefreshAccessToken(APIView):
 
     permission_classes = [AllowAny]
